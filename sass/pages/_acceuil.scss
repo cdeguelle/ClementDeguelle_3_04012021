@@ -1,0 +1,177 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.searchbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-top: 4px solid darken($background-color-2, 10);
+    background-color: lighten($background-color-2,5);
+    padding-left: 25px;
+        &__geo {
+            height: 25px;
+            background-color: lighten($background-color-2,5);
+            border: 1px solid lighten($background-color-2,5);
+        }
+        &__form {
+                & input {
+                    border: 1px solid lighten($background-color-2,5);
+                    background-color: lighten($background-color-2,5);
+                        &::placeholder {
+                            opacity: 1;
+                            color: black;
+                            font-size: 1em;
+                        }
+                }
+        }
+}
+
+.explore {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px 30px 20px;
+    background-color: lighten($background-color-1, 15);
+        &__title {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+            padding: 0 50px 0 50px;
+        }
+        &__subtitle {
+            text-align: center;
+            flex-wrap: wrap;
+            font-size: 0.9em;
+            margin-top: 15px;
+            font-weight: 300;
+        }
+        &__btn {
+            margin-top: 15px;
+            border-radius: 50px;
+            height: 50px;
+            padding: 0 15px 0 15px;
+        }
+}
+
+.function {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0 15px 15px;
+        &__title {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    background-color: lighten($background-color-1, 15);
+    margin: 15px 15px 15px 10px;
+    border-radius: 25px;
+    position: relative;
+    height: 80px;
+    @include box-shadow;
+        &__number {
+            background-color: $color-primary;
+            border-radius: 50px;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            color: white;
+            position: absolute;
+            left: -10px;
+        }
+        &__logo {
+            margin: 0 20px 0 30px;
+            opacity: 0.5;
+            font-size: 120%;
+        }
+        & p {
+            font-weight: 550;
+        }
+}
+
+.step3 {
+    background-color: pastel($color-primary);
+        &__logo {
+            color: darken(pastel($color-primary),50);
+        }
+}
+
+.restau {
+    display: flex;
+    flex-direction: column;
+    background-color: lighten($background-color-1, 15);
+    padding: 30px 15px 50px 15px;
+        &__title {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+}
+
+.cards {
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 15px;
+    margin: 15px 0 15px 0;
+    @include box-shadow;
+    position: relative;
+        &__new {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 0.7em;
+            font-weight: bold;
+            background-color: $color-tertiary;
+            color: darken($color-tertiary, 40);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        &__img {
+            object-fit: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            height: 250px;
+        }
+        &__txt {
+            margin: 10px 0 10px 10px;
+            position: relative;
+        }
+        &__title {
+            font-size: 1em;
+            font-weight: 550;
+            margin-bottom: 5px;
+        }
+        &__subtitle {
+            font-size: 0.9em;
+            opacity: 0.6;
+        }
+        &__like {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            opacity: 1;
+                &:hover {
+                    opacity: 0;
+                    transition: opacity 400ms;
+                }
+            &--hover {
+                position: absolute;
+                top: 10px;
+                right: 15px;
+                opacity: 0;
+                    &:hover {
+                        color: $color-primary;
+                        opacity: 1;
+                        transition: opacity 400ms;
+                    }
+            }
+        }
+}
