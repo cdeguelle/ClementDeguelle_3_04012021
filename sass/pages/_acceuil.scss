@@ -8,7 +8,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 50px;
-    @include border-searchbar;
     background-color: $background-searchbar;
     padding-left: 25px;
         &__geo {
@@ -52,14 +51,7 @@ body {
         }
         &__btn {
             margin-top: 15px;
-            border-radius: 50px;
-            height: 50px;
-            padding: 0 15px 0 15px;
-            background-image: linear-gradient($color-secondary, $color-primary);
-            color: white;
-            font-family: 'Roboto', sans-serif;
-            border: none;
-            @include box-shadow;
+            @include button;
         }
 }
 
