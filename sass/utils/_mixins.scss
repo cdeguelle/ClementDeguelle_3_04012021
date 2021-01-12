@@ -1,3 +1,12 @@
 @mixin box-shadow {
     box-shadow: 3px 3px 10px rgb(187, 183, 183);
 }
+
+@mixin border-searchbar {
+    border-top:4px solid #c6c3c3;
+}
+
+@mixin font-title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
