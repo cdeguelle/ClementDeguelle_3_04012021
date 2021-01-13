@@ -106,6 +106,7 @@ body {
   margin-top: 15px;
   border-radius: 50px;
   height: 50px;
+  width: 175px;
   padding: 0 15px 0 15px;
   background-image: linear-gradient(#FF79DA, #9356DC);
   color: white;
@@ -255,10 +256,11 @@ body {
 .menu__title {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .menu__title p {
   font-family: "Shrikhand", cursive;
-  font-size: 2em;
+  font-size: 1.6em;
 }
 .menu__title i {
   font-size: 1.5em;
@@ -268,6 +270,13 @@ body {
 .menu__subtitle {
   text-transform: uppercase;
   margin-top: 40px;
+}
+.menu__subtitle--underline {
+  height: 2px;
+  width: 40px;
+  background-color: #99E2D0;
+  border-radius: 20px;
+  margin-top: 5px;
 }
 .menu__bar {
   display: flex;
@@ -292,9 +301,10 @@ body {
   font-size: 0.8em;
 }
 .menu__btn {
-  margin-top: 50px;
+  margin: 50px 85px 0 85px;
   border-radius: 50px;
   height: 50px;
+  width: 175px;
   padding: 0 15px 0 15px;
   background-image: linear-gradient(#FF79DA, #9356DC);
   color: white;
