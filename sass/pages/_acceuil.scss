@@ -50,8 +50,25 @@ body {
             opacity: 0.6;
         }
         &__btn {
+            position: relative;
             margin-top: 15px;
             @include button;
+            &:active {
+                &::after {
+                    opacity: 1;
+                }
+            }
+            &::after {
+                content: "Explorer nos restaurants";
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;  
+                left: 0;
+                opacity: 0;
+                transition: opacity 300ms;
+                @include button-after;
+            }
         }
 }
 
@@ -134,8 +151,9 @@ body {
             height: 200px;
         }
         &__txt {
+            display: flex;
+            justify-content: space-between;
             margin: 10px 0 10px 10px;
-            position: relative;
         }
         &__title {
             font-size: 1em;
@@ -147,24 +165,34 @@ body {
             opacity: 0.6;
         }
         &__like {
-            position: absolute;
+            position: relative;
             top: 10px;
             right: 15px;
-            opacity: 1;
-                &:hover {
-                    opacity: 0;
-                    transition: opacity 400ms;
-                }
-            &--hover {
+            &--noactive {
                 position: absolute;
-                top: 10px;
-                right: 15px;
+                top: 0;
+                right: 0;
+                font-size: 1.5em;
+                transition: opacity 200ms ease-in-out;
+                opacity: 1;
+                z-index: 1;
+                &:active {
+                    opacity: 0;
+                }
+                &:active + .cards__like--active {
+                    opacity: 1;
+                }
+            }
+            &--active {
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-size: 1.5em;
+                @include color-button;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
                 opacity: 0;
-                    &:hover {
-                        color: $color-primary;
-                        opacity: 1;
-                        transition: opacity 400ms;
-                    }
+                transition: opacity 400ms ease-in-out;
             }
         }
 }

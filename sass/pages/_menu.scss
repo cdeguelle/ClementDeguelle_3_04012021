@@ -69,7 +69,24 @@ body {
         }
     }
     &__btn {
+        position: relative;
         margin: 50px 85px 0 85px;
         @include button;
+        &:active {
+            &::after {
+                opacity: 1;
+            }
+        }
+        &::after {
+            content: "Commander";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;  
+            left: 0;
+            opacity: 0;
+            transition: opacity 300ms;
+            @include button-after;
+        }
     }
 }
