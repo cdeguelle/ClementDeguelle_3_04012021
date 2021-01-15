@@ -1,0 +1,16 @@
+.loading-spinner {
+    color: $color-primary;
+    font-size: 90px;
+    text-indent: -9999em;
+    overflow: hidden;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    position: absolute;
+    top: 333px;
+    right: 150px;
+    transform: translateZ(0);
+    z-index: -1;
+    animation: load 3s ease-in-out both, round 3s ease-in-out both;
+}
+

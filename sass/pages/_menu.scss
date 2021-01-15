@@ -36,7 +36,9 @@ body {
         }
     }
     &__subtitle {
+        font-family: 'Roboto-light', sans-serif;
         text-transform: uppercase;
+        font-weight: 100;
         margin-top: 40px;
         &--underline {
             height: 2px;
@@ -48,13 +50,14 @@ body {
     }
     &__bar {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         justify-content: space-between;
         border-radius: 15px;
         background-color: white;
         padding: 10px;
         margin: 10px 0;
         @include box-shadow;
+        opacity: 0;
         &--meal {
             font-size: 1em;
             font-weight: bold;
@@ -62,7 +65,7 @@ body {
         &--topping {
             font-size: 0.8em;
             font-weight: 400;
-            opacity: 0.6;
+            font-family: 'Roboto-light', sans-serif;
         }
         &--price {
             font-size: 0.8em;
@@ -88,5 +91,14 @@ body {
             transition: opacity 300ms;
             @include button-after;
         }
+    }
+    &__entrees {
+        animation: menu 2000ms 400ms ease-in-out forwards;
+    }
+    &__plats {
+        animation: menu 2000ms 800ms ease-in-out forwards;
+    }
+    &__desserts {
+        animation: menu 2000ms 1200ms ease-in-out forwards;
     }
 }

@@ -2,8 +2,8 @@
     box-shadow: 3px 3px 10px rgb(187, 183, 183);
 }
 
-@mixin border-header {
-    border-bottom: 4px solid #c6c3c3;
+@mixin shadow-header {
+    box-shadow: 0px 3px 0px 1px #c6c3c3;
 }
 
 @mixin font-title {

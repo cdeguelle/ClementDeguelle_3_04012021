@@ -5,7 +5,7 @@ header {
     position: relative;
     height: 80px;
     align-items: center;
-    @include border-header;
+    @include shadow-header;
         & a {
             text-decoration: none;
             font-family: 'Shrikhand', cursive;
