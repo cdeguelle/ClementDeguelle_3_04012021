@@ -15,22 +15,37 @@ body {
     height: 50px;
     background-color: $background-searchbar;
     padding-left: 25px;
-        &__geo {
-            height: 25px;
-            background-color: $background-searchbar;
+    &__geo {
+        height: 25px;
+        background-color: $background-searchbar;
+        border: 1px solid $background-searchbar;
+    }
+    &__form {
+        & input {
             border: 1px solid $background-searchbar;
-        }
-        &__form {
-                & input {
-                    border: 1px solid $background-searchbar;
-                    background-color: $background-searchbar;
-                        &::placeholder {
-                            opacity: 1;
-                            color: black;
-                            font-size: 1em;
-                        }
+            background-color: $background-searchbar;
+                &::placeholder {
+                    opacity: 1;
+                    color: black;
+                    font-size: 1em;
                 }
         }
+    }
+    @include tablette {
+        height: 75px;
+        padding-left: 0;
+        &__geo {
+            height: 50px;
+            font-size: 1.5em;
+        }
+        &__form {
+            & input {
+                &::placeholder {
+                    font-size: 1.5em;
+                }
+            }
+        }
+    }
 }
 
 .explore {
@@ -40,100 +55,126 @@ body {
     align-items: center;
     padding: 30px 20px 30px 20px;
     background-color: $background-all;
+    &__title {
+        @include font-title;
+        text-align: center;
+        padding: 0 50px 0 50px;
+    }
+    &__subtitle {
+        text-align: center;
+        padding: 0 40px 0 40px;
+        font-size: $size-subtitle;
+        margin-top: 15px;
+        font-family: 'Roboto-light', sans-serif;
+    }
+    &__btn {
+        position: relative;
+        margin-top: 15px;
+        @include button;
+        &:active {
+            &::after {
+                opacity: 1;
+            }
+        }
+        &::after {
+            content: "Explorer nos restaurants";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;  
+            left: 0;
+            opacity: 0;
+            transition: opacity 300ms;
+            @include button-after;
+        }
+    }
+    @include tablette {
         &__title {
-            @include font-title;
-            text-align: center;
-            padding: 0 50px 0 50px;
+            font-size: 1.5em;
         }
         &__subtitle {
-            text-align: center;
-            padding: 0 40px 0 40px;
-            font-size: $size-subtitle;
-            margin-top: 15px;
-            font-family: 'Roboto-light', sans-serif;
+            font-size: 1.2em;
         }
-        &__btn {
-            position: relative;
-            margin-top: 15px;
-            @include button;
-            &:active {
-                &::after {
-                    opacity: 1;
-                }
-            }
-            &::after {
-                content: "Explorer nos restaurants";
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;  
-                left: 0;
-                opacity: 0;
-                transition: opacity 300ms;
-                @include button-after;
-            }
-        }
+    }
 }
 
 .function {
-    display: flex;
-    flex-direction: column;
     padding: 30px 0 15px 15px;
-        &__title {
-            @include font-title;
-        }
+    &__title {
+        @include font-title;
+    }
 }
 
 .step {
     display: flex;
-    align-items: center;
-    background-color: $background-all;
-    margin: 15px 15px 15px 10px;
-    border-radius: 25px;
-    position: relative;
-    height: 80px;
-    @include box-shadow;
-        &__number {
-            display: flex;
-            background-color: $color-primary;
-            border-radius: 50px;
-            width: 20px;
-            height: 20px;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            position: absolute;
-            left: -10px;
-            font-size: 0.7em;
-        }
-        &__logo {
-            margin: 0 20px 0 30px;
-            opacity: 0.5;
-            font-size: 120%;
-        }
+    flex-direction: column;
+    @include tablette {
+        flex-direction: row;
+    }
+    &__bar {
+        display: flex;
+        align-items: center;
+        background-color: $background-all;
+        margin: 15px 15px 15px 10px;
+        border-radius: 25px;
+        position: relative;
+        height: 80px;
+        @include box-shadow;
+    }
+    &__number {
+        display: flex;
+        background-color: $color-primary;
+        border-radius: 50px;
+        width: 20px;
+        height: 20px;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        position: absolute;
+        left: -10px;
+        font-size: 0.7em;
+    }
+    &__logo {
+        margin: 0 20px 0 30px;
+        opacity: 0.5;
+        font-size: 120%;
+    }
 }
 
 .step3 {
     background-color: pastel($color-primary);
-        &__logo {
-            color: darken(pastel($color-primary),50);
-        }
+    &__logo {
+        color: darken(pastel($color-primary),50);
+    }
 }
 
 .restau {
-    display: flex;
-    flex-direction: column;
     background-color: $background-all;
     padding: 30px 15px 50px 15px;
+    &__title {
+        @include font-title;
+    }
+    @include tablette {
+        padding-left: 0;
         &__title {
-            @include font-title;
+            padding-left: 20px;
         }
+    }
 }
 
 article {
     & a {
         text-decoration: none;
         color: black;
+    }
+}
+
+.restau__cards {
+    display: flex;
+    flex-direction: column;
+    @include tablette {
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 }
 
@@ -146,67 +187,71 @@ article {
     margin: 15px 0 15px 0;
     @include box-shadow;
     position: relative;
-        &__new {
+    &__new {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 0.7em;
+        font-weight: bold;
+        background-color: $color-tertiary;
+        color: darken($color-tertiary, 40);
+        padding: 10px;
+        border-radius: 5px;
+    }
+    &__img {
+        object-fit: cover;
+        border-top-left-radius: $radius-cards;
+        border-top-right-radius: $radius-cards;
+        height: 200px;
+    }
+    &__txt {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0 10px 10px;
+    }
+    &__title {
+        font-size: 1em;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    &__subtitle {
+        font-size: $size-subtitle;
+        font-family: 'Roboto-light', sans-serif;
+        font-weight: 100;
+    }
+    &__like {
+        position: relative;
+        top: 10px;
+        right: 15px;
+        &--noactive {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 0.7em;
-            font-weight: bold;
-            background-color: $color-tertiary;
-            color: darken($color-tertiary, 40);
-            padding: 10px;
-            border-radius: 5px;
-        }
-        &__img {
-            object-fit: cover;
-            border-top-left-radius: $radius-cards;
-            border-top-right-radius: $radius-cards;
-            height: 200px;
-        }
-        &__txt {
-            display: flex;
-            justify-content: space-between;
-            margin: 10px 0 10px 10px;
-        }
-        &__title {
-            font-size: 1em;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        &__subtitle {
-            font-size: $size-subtitle;
-            font-family: 'Roboto-light', sans-serif;
-            font-weight: 100;
-        }
-        &__like {
-            position: relative;
-            top: 10px;
-            right: 15px;
-            &--noactive {
-                position: absolute;
-                top: 0;
-                right: 0;
-                font-size: 1.5em;
-                transition: opacity 200ms ease-in-out;
-                opacity: 1;
-                z-index: 1;
-                &:active {
-                    opacity: 0;
-                }
-                &:active + .cards__like--active {
-                    opacity: 1;
-                }
-            }
-            &--active {
-                position: absolute;
-                top: 0;
-                right: 0;
-                font-size: 1.5em;
-                @include color-button;
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
+            top: 0;
+            right: 0;
+            font-size: 1.5em;
+            transition: opacity 200ms ease-in-out;
+            opacity: 1;
+            z-index: 1;
+            &:active {
                 opacity: 0;
-                transition: opacity 400ms ease-in-out;
+            }
+            &:active + .cards__like--active {
+                opacity: 1;
             }
         }
+        &--active {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 1.5em;
+            @include color-button;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0;
+            transition: opacity 400ms ease-in-out;
+        }
+    }
+    @include tablette {
+        width: 350px;
+        margin-left: 20px;
+    }
 }

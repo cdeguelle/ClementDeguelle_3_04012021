@@ -6,15 +6,18 @@ header {
     height: 80px;
     align-items: center;
     @include shadow-header;
-        & a {
-            text-decoration: none;
-            font-family: 'Shrikhand', cursive;
-            color: black;
-            font-size: 1.8em;
-        }
-        & .back {
-            position: absolute;
-            left: 10px;
-            font-size: 1.2em;
-        }
+    & a {
+        text-decoration: none;
+        font-family: 'Shrikhand', cursive;
+        color: black;
+        font-size: 1.8em;
+    }
+    & .back {
+        position: absolute;
+        left: 10px;
+        font-size: 1.2em;
+    }
+    @include tablette {
+        font-size: 2em;
+    }
 }

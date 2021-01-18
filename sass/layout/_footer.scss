@@ -4,18 +4,24 @@
     padding: 30px 0 15px 15px;
     background-color: #272525;
     color: white;
+    &__title {
+        font-family: 'Shrikhand', sans-serif;
+        margin-bottom: 30px;
+    }
+    &__content {
+        margin-bottom: 10px;
+        cursor: pointer;
+        & i {
+            margin-right: 5px;
+        }
+        & a {
+            text-decoration: none;
+            color: white;
+        }
+    }
+    @include tablette {
         &__title {
-            font-family: 'Shrikhand', sans-serif;
-            margin-bottom: 30px;
+            font-size: 2em;
         }
-        &__content {
-            margin-bottom: 10px;
-                & i {
-                    margin-right: 5px;
-                }
-            & a {
-                text-decoration: none;
-                color: white;
-            }
-        }
+    }
 }

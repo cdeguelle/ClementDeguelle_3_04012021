@@ -12,5 +12,10 @@
     transform: translateZ(0);
     z-index: -1;
     animation: load 3s ease-in-out both, round 3s ease-in-out both;
+    @include tablette {
+        top: 500px;
+        right: 350px;
+        font-size: 120px;
+    }
 }
 

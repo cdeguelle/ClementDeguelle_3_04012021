@@ -50,25 +50,65 @@ body {
     }
     &__bar {
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         justify-content: space-between;
+        overflow: hidden;
+        cursor: pointer;
         border-radius: 15px;
         background-color: white;
-        padding: 10px;
+        padding: 0 10px;
         margin: 10px 0;
         @include box-shadow;
-        opacity: 0;
+        &:active > .checkbox {
+            transform: translate(-50px, 0px);
+            & .menu__bar--confirm {
+                & .menu__bar--icone {
+                    transform: rotate(0deg);
+                }
+            }
+        }
+        &:active > .menu__bar--meal {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            margin-right: 20px;
+        }
         &--meal {
             font-size: 1em;
             font-weight: bold;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
         &--topping {
-            font-size: 0.8em;
-            font-weight: 400;
+            font-size: 0.9em;
             font-family: 'Roboto-light', sans-serif;
+            font-weight: 100;
         }
         &--price {
             font-size: 0.8em;
+            margin-top: 25px;
+            position: relative;
+            left: 40px;
+            top: 15px;
+        }
+        &--confirm {
+            background-color: $color-tertiary;
+            color: white;
+            height: 52px;
+            width: 50px;
+            border-radius: 0px 10px 10px 0px;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 1.2rem;
+            position: relative;
+            left: 60px;
+        }
+        &--icone {
+            position: relative;
+            top: 5px;
+            transform: rotate(180deg);
+            transition-duration: 0.8s;
         }
     }
     &__btn {
@@ -93,12 +133,17 @@ body {
         }
     }
     &__entrees {
-        animation: menu 2000ms 400ms ease-in-out forwards;
+        animation: translate-menu 3000ms ease-in-out both;
     }
     &__plats {
-        animation: menu 2000ms 800ms ease-in-out forwards;
+        animation: translate-menu 3000ms 200ms ease-in-out both;
     }
     &__desserts {
-        animation: menu 2000ms 1200ms ease-in-out forwards;
+        animation: translate-menu 3000ms 400ms ease-in-out both;
     }
+}
+
+.checkbox {
+    display: flex;
+    transition: all 500ms ease-in-out;
 }

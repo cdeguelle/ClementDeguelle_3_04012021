@@ -38,6 +38,18 @@
     color: white;
     font-family: 'Roboto', sans-serif;
     border: none;
-    background: linear-gradient(lighten($color-secondary, 5), lighten($color-primary,5));
-    box-shadow: 5px 5px 15px rgb(187, 183, 183);
+    background: linear-gradient(lighten($color-secondary, 10), lighten($color-primary,10));
+    box-shadow: 3px 5px 5px rgb(158, 152, 152);
+}
+
+@mixin tablette {
+    @media screen and (min-width : 768px) and (max-width : 1024px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width : 1025px) {
+        @content;
+    }
 }
