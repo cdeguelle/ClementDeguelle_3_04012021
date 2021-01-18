@@ -36,12 +36,12 @@ body {
         padding-left: 0;
         &__geo {
             height: 50px;
-            font-size: 1.5em;
+            font-size: $size-title-tab;
         }
         &__form {
             & input {
                 &::placeholder {
-                    font-size: 1.5em;
+                    font-size: $size-title-tab;
                 }
             }
         }
@@ -79,10 +79,7 @@ body {
         &::after {
             content: "Explorer nos restaurants";
             position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;  
-            left: 0;
+            @include pos-absolute;
             opacity: 0;
             transition: opacity 300ms;
             @include button-after;
@@ -90,7 +87,7 @@ body {
     }
     @include tablette {
         &__title {
-            font-size: 1.5em;
+            font-size: $size-title-tab;
         }
         &__subtitle {
             font-size: 1.2em;
