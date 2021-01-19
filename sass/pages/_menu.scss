@@ -1,6 +1,9 @@
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    @include desktop {
+        background-color: $background-all;
+    }
 }
 
 .cover {
@@ -10,6 +13,11 @@ body {
         position: absolute;
         top: 84px;
         z-index: -1;
+    }
+    @include desktop {
+        &__img {
+            height: 300px;
+        }
     }
 }
 
@@ -113,7 +121,8 @@ body {
     }
     &__btn {
         position: relative;
-        margin: 50px 85px 0 85px;
+        margin-top: 50px;
+        align-self: center;
         @include button;
         &:active {
             &::after {
@@ -123,10 +132,7 @@ body {
         &::after {
             content: "Commander";
             position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;  
-            left: 0;
+            @include pos-absolute;
             opacity: 0;
             transition: opacity 300ms;
             @include button-after;
@@ -134,12 +140,86 @@ body {
     }
     &__entrees {
         animation: translate-menu 3000ms ease-in-out both;
+        @include desktop {
+            animation: translate-menu-desk 3000ms ease-out both;
+        }
     }
     &__plats {
         animation: translate-menu 3000ms 200ms ease-in-out both;
+        @include desktop {
+            animation: translate-menu-desk 3000ms 200ms ease-out both;
+        }
     }
     &__desserts {
         animation: translate-menu 3000ms 400ms ease-in-out both;
+        @include desktop {
+            animation: translate-menu-desk 3000ms 400ms ease-out both;
+        }
+    }
+    @include tablette {
+        padding: 1px 30px 50px 30px;
+        &__btn {
+            &:hover {
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+        &__bar {
+            &:hover > .checkbox {
+                transform: translate(-50px, 0px);
+                & .menu__bar--confirm {
+                    & .menu__bar--icone {
+                        transform: rotate(0deg);
+                    }
+                }
+            }
+            &:hover > .menu__bar--meal {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                margin-right: 20px;
+            }
+        }
+    }
+    @include desktop {
+        width: 75%;
+        margin: 250px 12.5% 0 12.5%;
+        &__meals {
+            display: flex;
+            justify-content: space-around;
+        }
+        &__title {
+            padding: 0 50px;
+        }
+        &__btn {
+            font-size: 1.2em;
+            @include button-desk;
+            &:hover {
+                &::after {
+                    opacity: 1;
+                }
+            }
+            &::after {
+                font-size: 1em;
+            }
+        }
+        &__bar {
+            &:hover > .checkbox {
+                transform: translate(-50px, 0px);
+                & .menu__bar--confirm {
+                    & .menu__bar--icone {
+                        transform: rotate(0deg);
+                    }
+                }
+            }
+            &:hover > .menu__bar--meal {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                margin-right: 20px;
+            }
+        }
     }
 }
 

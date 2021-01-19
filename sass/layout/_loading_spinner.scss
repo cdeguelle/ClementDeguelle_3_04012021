@@ -7,15 +7,17 @@
     height: 1em;
     border-radius: 50%;
     position: absolute;
-    top: 333px;
-    right: 150px;
+    top: 300px;
+    right: 40%;
     transform: translateZ(0);
-    z-index: -1;
+    z-index: -2;
     animation: load 3s ease-in-out both, round 3s ease-in-out both;
     @include tablette {
-        top: 500px;
-        right: 350px;
         font-size: 120px;
+    }
+    @include desktop {
+        right: 45%;
+        font-size: 200px;
     }
 }
 

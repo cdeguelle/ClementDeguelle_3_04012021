@@ -19,6 +19,7 @@ body {
         height: 25px;
         background-color: $background-searchbar;
         border: 1px solid $background-searchbar;
+        cursor: pointer;
     }
     &__form {
         & input {
@@ -33,6 +34,21 @@ body {
     }
     @include tablette {
         height: 75px;
+        padding-left: 0;
+        &__geo {
+            height: 50px;
+            font-size: $size-title-tab;
+        }
+        &__form {
+            & input {
+                &::placeholder {
+                    font-size: $size-title-tab;
+                }
+            }
+        }
+    }
+    @include desktop {
+        height: 80px;
         padding-left: 0;
         &__geo {
             height: 50px;
@@ -92,6 +108,39 @@ body {
         &__subtitle {
             font-size: 1.2em;
         }
+        &__btn {
+            &:hover {
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    @include desktop {
+        &__title {
+            font-size: $size-title-tab;
+        }
+        &__subtitle {
+            font-size: 1.2em;
+        }
+        &__btn {
+            font-size: 1.2em;
+            @include button-desk;
+            &:hover {
+                &::after {
+                    opacity: 1;
+                }
+            }
+            &::after {
+                font-size: 1em;
+            }
+        }
+    }
+}
+
+.principal {
+    @include desktop {
+        display: flex;
     }
 }
 
@@ -99,6 +148,10 @@ body {
     padding: 30px 0 15px 15px;
     &__title {
         @include font-title;
+    }
+    @include desktop {
+        width: 30%;
+        margin-left: 70px;
     }
 }
 
@@ -157,6 +210,13 @@ body {
             padding-left: 20px;
         }
     }
+    @include desktop {
+        width: 70%;
+        padding-left: 40px;
+        &__title {
+            margin-left: 100px;
+        }
+    }
 }
 
 article {
@@ -172,6 +232,11 @@ article {
     @include tablette {
         flex-direction: row;
         flex-wrap: wrap;
+    }
+    @include desktop {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
 
@@ -250,5 +315,29 @@ article {
     @include tablette {
         width: 350px;
         margin-left: 20px;
+        &__like {
+            &--noactive {
+                &:hover {
+                    opacity: 0;
+                }
+                &:hover + .cards__like--active {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    @include desktop {
+        width: 350px;
+        margin-right: 40px;
+        &__like {
+            &--noactive {
+                &:hover {
+                    opacity: 0;
+                }
+                &:hover + .cards__like--active {
+                    opacity: 1;
+                }
+            }
+        }
     }
 }

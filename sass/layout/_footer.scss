@@ -24,4 +24,10 @@
             font-size: 2em;
         }
     }
+    @include desktop {
+        padding-left: 70px;
+        &__title {
+            font-size: 2em;
+        }
+    }
 }

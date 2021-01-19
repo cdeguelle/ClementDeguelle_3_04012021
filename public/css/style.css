@@ -48,6 +48,17 @@
     transform: translateX(0);
   }
 }
+@keyframes translate-menu-desk {
+  0% {
+    transform: translateX(-2999px);
+  }
+  50% {
+    transform: translateX(-500px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 @font-face {
   font-family: "Shrikhand";
   font-style: normal;
@@ -94,6 +105,11 @@ header .back {
     font-size: 2em;
   }
 }
+@media screen and (min-width: 1025px) {
+  header {
+    font-size: 2em;
+  }
+}
 
 .footer {
   display: flex;
@@ -122,6 +138,14 @@ header .back {
     font-size: 2em;
   }
 }
+@media screen and (min-width: 1025px) {
+  .footer {
+    padding-left: 70px;
+  }
+  .footer__title {
+    font-size: 2em;
+  }
+}
 
 .loading-spinner {
   color: #9356DC;
@@ -132,17 +156,21 @@ header .back {
   height: 1em;
   border-radius: 50%;
   position: absolute;
-  top: 333px;
-  right: 150px;
+  top: 300px;
+  right: 40%;
   transform: translateZ(0);
-  z-index: -1;
+  z-index: -2;
   animation: load 3s ease-in-out both, round 3s ease-in-out both;
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .loading-spinner {
-    top: 500px;
-    right: 350px;
     font-size: 120px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .loading-spinner {
+    right: 45%;
+    font-size: 200px;
   }
 }
 
@@ -168,6 +196,7 @@ body {
   height: 25px;
   background-color: #ebeaea;
   border: 1px solid #ebeaea;
+  cursor: pointer;
 }
 .searchbar__form input {
   border: 1px solid #ebeaea;
@@ -181,6 +210,19 @@ body {
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .searchbar {
     height: 75px;
+    padding-left: 0;
+  }
+  .searchbar__geo {
+    height: 50px;
+    font-size: 1.5em;
+  }
+  .searchbar__form input::placeholder {
+    font-size: 1.5em;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .searchbar {
+    height: 80px;
     padding-left: 0;
   }
   .searchbar__geo {
@@ -258,6 +300,42 @@ body {
   .explore__subtitle {
     font-size: 1.2em;
   }
+  .explore__btn:hover::after {
+    opacity: 1;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .explore__title {
+    font-size: 1.5em;
+  }
+  .explore__subtitle {
+    font-size: 1.2em;
+  }
+  .explore__btn {
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 50px;
+    height: 80px;
+    width: 300px;
+    padding: 0 15px 0 15px;
+    background: linear-gradient(#FF79DA, #9356DC);
+    color: white;
+    font-family: "Roboto", sans-serif;
+    border: none;
+    box-shadow: 3px 3px 10px #bbb7b7;
+  }
+  .explore__btn:hover::after {
+    opacity: 1;
+  }
+  .explore__btn::after {
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .principal {
+    display: flex;
+  }
 }
 
 .function {
@@ -266,6 +344,12 @@ body {
 .function__title {
   font-size: 1.2em;
   font-weight: bold;
+}
+@media screen and (min-width: 1025px) {
+  .function {
+    width: 30%;
+    margin-left: 70px;
+  }
 }
 
 .step {
@@ -329,6 +413,15 @@ body {
     padding-left: 20px;
   }
 }
+@media screen and (min-width: 1025px) {
+  .restau {
+    width: 70%;
+    padding-left: 40px;
+  }
+  .restau__title {
+    margin-left: 100px;
+  }
+}
 
 article a {
   text-decoration: none;
@@ -343,6 +436,13 @@ article a {
   .restau__cards {
     flex-direction: row;
     flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .restau__cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
@@ -424,11 +524,34 @@ article a {
     width: 350px;
     margin-left: 20px;
   }
+  .cards__like--noactive:hover {
+    opacity: 0;
+  }
+  .cards__like--noactive:hover + .cards__like--active {
+    opacity: 1;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .cards {
+    width: 350px;
+    margin-right: 40px;
+  }
+  .cards__like--noactive:hover {
+    opacity: 0;
+  }
+  .cards__like--noactive:hover + .cards__like--active {
+    opacity: 1;
+  }
 }
 
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
+}
+@media screen and (min-width: 1025px) {
+  body {
+    background-color: #f5f5f5;
+  }
 }
 
 .cover__img {
@@ -437,6 +560,11 @@ body {
   position: absolute;
   top: 84px;
   z-index: -1;
+}
+@media screen and (min-width: 1025px) {
+  .cover__img {
+    height: 300px;
+  }
 }
 
 .menu {
@@ -538,7 +666,8 @@ body {
 }
 .menu__btn {
   position: relative;
-  margin: 50px 85px 0 85px;
+  margin-top: 50px;
+  align-self: center;
   cursor: pointer;
   border-radius: 50px;
   height: 50px;
@@ -577,11 +706,90 @@ body {
 .menu__entrees {
   animation: translate-menu 3000ms ease-in-out both;
 }
+@media screen and (min-width: 1025px) {
+  .menu__entrees {
+    animation: translate-menu-desk 3000ms ease-out both;
+  }
+}
 .menu__plats {
   animation: translate-menu 3000ms 200ms ease-in-out both;
 }
+@media screen and (min-width: 1025px) {
+  .menu__plats {
+    animation: translate-menu-desk 3000ms 200ms ease-out both;
+  }
+}
 .menu__desserts {
   animation: translate-menu 3000ms 400ms ease-in-out both;
+}
+@media screen and (min-width: 1025px) {
+  .menu__desserts {
+    animation: translate-menu-desk 3000ms 400ms ease-out both;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .menu {
+    padding: 1px 30px 50px 30px;
+  }
+  .menu__btn:hover::after {
+    opacity: 1;
+  }
+  .menu__bar:hover > .checkbox {
+    transform: translate(-50px, 0px);
+  }
+  .menu__bar:hover > .checkbox .menu__bar--confirm .menu__bar--icone {
+    transform: rotate(0deg);
+  }
+  .menu__bar:hover > .menu__bar--meal {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-right: 20px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .menu {
+    width: 75%;
+    margin: 250px 12.5% 0 12.5%;
+  }
+  .menu__meals {
+    display: flex;
+    justify-content: space-around;
+  }
+  .menu__title {
+    padding: 0 50px;
+  }
+  .menu__btn {
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 50px;
+    height: 80px;
+    width: 300px;
+    padding: 0 15px 0 15px;
+    background: linear-gradient(#FF79DA, #9356DC);
+    color: white;
+    font-family: "Roboto", sans-serif;
+    border: none;
+    box-shadow: 3px 3px 10px #bbb7b7;
+  }
+  .menu__btn:hover::after {
+    opacity: 1;
+  }
+  .menu__btn::after {
+    font-size: 1em;
+  }
+  .menu__bar:hover > .checkbox {
+    transform: translate(-50px, 0px);
+  }
+  .menu__bar:hover > .checkbox .menu__bar--confirm .menu__bar--icone {
+    transform: rotate(0deg);
+  }
+  .menu__bar:hover > .menu__bar--meal {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-right: 20px;
+  }
 }
 
 .checkbox {

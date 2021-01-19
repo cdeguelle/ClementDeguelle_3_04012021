@@ -20,4 +20,7 @@ header {
     @include tablette {
         font-size: 2em;
     }
+    @include desktop {
+        font-size: 2em;
+    }
 }

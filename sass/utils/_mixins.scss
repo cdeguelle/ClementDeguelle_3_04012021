@@ -35,6 +35,19 @@
     @include box-shadow;        
 }
 
+@mixin button-desk {
+    cursor: pointer;
+    border-radius: 50px;
+    height: 80px;
+    width: 300px;
+    padding: 0 15px 0 15px;
+    @include color-button;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    @include box-shadow;       
+}
+
 @mixin button-after {
     display: flex;
     align-items: center;

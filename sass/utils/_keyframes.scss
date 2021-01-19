@@ -63,3 +63,17 @@
         transform: translateX(0);
     }
 }
+
+@keyframes translate-menu-desk {
+    0% {
+        transform: translateX(-2999px);
+    }
+
+    50% {
+        transform: translateX(-500px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
