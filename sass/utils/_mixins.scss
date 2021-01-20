@@ -11,6 +11,12 @@
     font-weight: bold;
 }
 
+@mixin layout-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 @mixin pos-absolute {
     top: 0;
     right: 0;
@@ -20,6 +26,12 @@
 
 @mixin color-button {
     background: linear-gradient($color-secondary, $color-primary);
+}
+
+@mixin overflow-checkbox {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 @mixin button {
