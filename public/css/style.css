@@ -50,13 +50,13 @@
 }
 @keyframes translate-menu-desk {
   0% {
-    transform: translateX(-2999px);
+    transform: translateY(-9999px);
   }
-  50% {
-    transform: translateX(-500px);
+  10% {
+    transform: translateY(-500px);
   }
   100% {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 @font-face {
@@ -269,7 +269,7 @@ body {
   border: none;
   box-shadow: 3px 3px 10px #bbb7b7;
 }
-.explore__btn:active::after {
+.explore__btn:hover::after {
   opacity: 1;
 }
 .explore__btn::after {
@@ -300,9 +300,6 @@ body {
   .explore__subtitle {
     font-size: 1.2em;
   }
-  .explore__btn:hover::after {
-    opacity: 1;
-  }
 }
 @media screen and (min-width: 1025px) {
   .explore__title {
@@ -323,9 +320,6 @@ body {
     font-family: "Roboto", sans-serif;
     border: none;
     box-shadow: 3px 3px 10px #bbb7b7;
-  }
-  .explore__btn:hover::after {
-    opacity: 1;
   }
   .explore__btn::after {
     font-size: 1em;
@@ -678,7 +672,7 @@ body {
   border: none;
   box-shadow: 3px 3px 10px #bbb7b7;
 }
-.menu__btn:active::after {
+.menu__btn:hover::after {
   opacity: 1;
 }
 .menu__btn::after {
@@ -730,9 +724,6 @@ body {
   .menu {
     padding: 1px 30px 50px 30px;
   }
-  .menu__btn:hover::after {
-    opacity: 1;
-  }
   .menu__bar:hover > .checkbox {
     transform: translate(-49px, 0px);
   }
@@ -770,9 +761,6 @@ body {
     font-family: "Roboto", sans-serif;
     border: none;
     box-shadow: 3px 3px 10px #bbb7b7;
-  }
-  .menu__btn:hover::after {
-    opacity: 1;
   }
   .menu__btn::after {
     font-size: 1em;

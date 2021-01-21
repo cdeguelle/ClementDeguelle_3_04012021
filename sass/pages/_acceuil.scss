@@ -87,7 +87,7 @@ body {
         position: relative;
         margin-top: 15px;
         @include button;
-        &:active {
+        &:hover {
             &::after {
                 opacity: 1;
             }
@@ -108,13 +108,6 @@ body {
         &__subtitle {
             font-size: 1.2em;
         }
-        &__btn {
-            &:hover {
-                &::after {
-                    opacity: 1;
-                }
-            }
-        }
     }
     @include desktop {
         &__title {
@@ -126,11 +119,6 @@ body {
         &__btn {
             font-size: 1.2em;
             @include button-desk;
-            &:hover {
-                &::after {
-                    opacity: 1;
-                }
-            }
             &::after {
                 font-size: 1em;
             }

@@ -66,14 +66,14 @@
 
 @keyframes translate-menu-desk {
     0% {
-        transform: translateX(-2999px);
+        transform: translateY(-9999px);
     }
 
-    50% {
-        transform: translateX(-500px);
+    10% {
+        transform: translateY(-500px);
     }
 
     100% {
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }

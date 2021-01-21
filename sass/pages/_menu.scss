@@ -115,7 +115,7 @@ body {
         margin-top: 50px;
         align-self: center;
         @include button;
-        &:active {
+        &:hover {
             &::after {
                 opacity: 1;
             }
@@ -149,13 +149,6 @@ body {
     }
     @include tablette {
         padding: 1px 30px 50px 30px;
-        &__btn {
-            &:hover {
-                &::after {
-                    opacity: 1;
-                }
-            }
-        }
         &__bar {
             &:hover > .checkbox {
                 transform: translate(-49px, 0px);
@@ -184,11 +177,6 @@ body {
         &__btn {
             font-size: 1.2em;
             @include button-desk;
-            &:hover {
-                &::after {
-                    opacity: 1;
-                }
-            }
             &::after {
                 font-size: 1em;
             }
