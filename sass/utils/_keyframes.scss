@@ -52,28 +52,16 @@
 
 @keyframes translate-menu {
     0% {
-        transform: translateX(-9999px);
+        opacity: 0;
+        transform: translateY(50px);
     }
 
-    10% {
-        transform: translateX(-500px);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
-}
-
-@keyframes translate-menu-desk {
-    0% {
-        transform: translateY(-9999px);
-    }
-
-    10% {
-        transform: translateY(-500px);
-    }
-
-    100% {
+    50% {
+        opacity: 0.5;
         transform: translateY(0);
+    }
+
+    100% {
+        opacity: 1;
     }
 }

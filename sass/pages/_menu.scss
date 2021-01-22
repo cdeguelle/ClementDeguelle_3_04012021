@@ -130,22 +130,13 @@ body {
         }
     }
     &__entrees {
-        animation: translate-menu 3000ms ease-in-out both;
-        @include desktop {
-            animation: translate-menu-desk 3000ms ease-out both;
-        }
+        animation: translate-menu 1000ms ease-in-out both;
     }
     &__plats {
-        animation: translate-menu 3000ms 200ms ease-in-out both;
-        @include desktop {
-            animation: translate-menu-desk 3000ms 200ms ease-out both;
-        }
+        animation: translate-menu 1000ms 300ms ease-in-out both;
     }
     &__desserts {
-        animation: translate-menu 3000ms 400ms ease-in-out both;
-        @include desktop {
-            animation: translate-menu-desk 3000ms 400ms ease-out both;
-        }
+        animation: translate-menu 1000ms 600ms ease-in-out both;
     }
     @include tablette {
         padding: 1px 30px 50px 30px;
