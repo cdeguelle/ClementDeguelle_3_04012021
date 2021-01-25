@@ -645,7 +645,7 @@ body {
 .menu__bar--icone {
   position: relative;
   top: 5px;
-  transform: rotate(180deg);
+  transform: rotate(360deg);
   transition-duration: 0.8s;
 }
 .menu__btn {
